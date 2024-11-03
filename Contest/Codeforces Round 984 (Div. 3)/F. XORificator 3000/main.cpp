@@ -1,5 +1,8 @@
-#include <iostream>
-#include <vector>
+/*
+    @author longvuuuu
+    @github kuronight29
+*/
+#include <bits/stdc++.h>
 using namespace std;
 
 using ll = long long;

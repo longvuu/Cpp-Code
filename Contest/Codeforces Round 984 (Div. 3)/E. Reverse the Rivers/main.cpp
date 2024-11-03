@@ -1,6 +1,8 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
+/*
+    @author longvuuuu
+    @github kuronight29
+*/
+#include <bits/stdc++.h>
 using namespace std;
 
 int main() {
@@ -9,26 +11,19 @@ int main() {
     
     vector<vector<int>> a(n, vector<int>(k));
     vector<vector<int>> b(n, vector<int>(k));
-    
-    // Input the values for each region in each country
     for (int i = 0; i < n; ++i) {
         for (int j = 0; j < k; ++j) {
             cin >> a[i][j];
         }
     }
-    
-    // Compute the new values using bitwise OR
     for (int j = 0; j < k; ++j) {
         b[0][j] = a[0][j];
         for (int i = 1; i < n; ++i) {
             b[i][j] = b[i-1][j] | a[i][j];
         }
     }
-    
-    // Precompute prefix min and max arrays
     vector<vector<int>> prefix_min(n, vector<int>(k, INT_MAX));
     vector<vector<int>> prefix_max(n, vector<int>(k, INT_MIN));
-    
     for (int j = 0; j < k; ++j) {
         prefix_min[0][j] = b[0][j];
         prefix_max[0][j] = b[0][j];
@@ -37,8 +32,6 @@ int main() {
             prefix_max[i][j] = max(prefix_max[i-1][j], b[i][j]);
         }
     }
-    
-    // Process each query
     for (int i = 0; i < q; ++i) {
         int m;
         cin >> m;

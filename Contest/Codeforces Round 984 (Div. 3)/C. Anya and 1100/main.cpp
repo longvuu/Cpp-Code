@@ -1,7 +1,8 @@
-#include <iostream>
-#include <string>
-#include <vector>
-#include <unordered_set>
+/*
+    @author longvuuuu
+    @github kuronight29
+*/
+#include <bits/stdc++.h>
 
 using namespace std;
 

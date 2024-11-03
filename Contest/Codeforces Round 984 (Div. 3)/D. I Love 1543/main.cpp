@@ -1,33 +1,35 @@
-#include <iostream>
-#include <vector>
-#include <string>
-
+/*
+    @author longvuuuu
+    @github kuronight29
+*/
+#include <bits/stdc++.h>
 using namespace std;
-
-void traverseLayer(vector<string>& carpet, int n, int m, int layer, string& path) {
-    // Traverse top row from left to right
-    for (int j = layer; j < m - layer; ++j) {
-        path += carpet[layer][j];
-    }
-    // Traverse right column from top to bottom
-    for (int i = layer + 1; i < n - layer; ++i) {
-        path += carpet[i][m - layer - 1];
-    }
-    // Traverse bottom row from right to left
-    for (int j = m - layer - 2; j >= layer; --j) {
-        path += carpet[n - layer - 1][j];
-    }
-    // Traverse left column from bottom to top
-    for (int i = n - layer - 2; i > layer; --i) {
-        path += carpet[i][layer];
-    }
-}
-
-int count1543(const string& path) {
+int count1543(const vector<string>& carpet, int n, int m) {
+    string target = "1543";
     int count = 0;
-    for (size_t i = 0; i + 3 < path.size(); ++i) {
-        if (path.substr(i, 4) == "1543") {
+    for (int layer = 0; layer < (min(n, m) + 1) / 2; ++layer) {
+        string layerString;
+        for (int j = layer; j < m - layer; ++j) {
+            layerString += carpet[layer][j];
+        }
+        for (int i = layer + 1; i < n - layer; ++i) {
+            layerString += carpet[i][m - layer - 1];
+        }
+        if (n - layer - 1 > layer) {
+            for (int j = m - layer - 2; j >= layer; --j) {
+                layerString += carpet[n - layer - 1][j];
+            }
+        }
+        // Left column
+        if (m - layer - 1 > layer) {
+            for (int i = n - layer - 2; i > layer; --i) {
+                layerString += carpet[i][layer];
+            }
+        }
+        size_t pos = layerString.find(target);
+        while (pos != string::npos) {
             ++count;
+            pos = layerString.find(target, pos + 1);
         }
     }
     return count;
@@ -43,16 +45,7 @@ int main() {
         for (int i = 0; i < n; ++i) {
             cin >> carpet[i];
         }
-
-        int totalCount = 0;
-        int layers = min(n, m) / 2;
-        for (int layer = 0; layer < layers; ++layer) {
-            string path;
-            traverseLayer(carpet, n, m, layer, path);
-            totalCount += count1543(path);
-        }
-
-        cout << totalCount << endl;
+        cout << count1543(carpet, n, m) << endl;
     }
     return 0;
 }
