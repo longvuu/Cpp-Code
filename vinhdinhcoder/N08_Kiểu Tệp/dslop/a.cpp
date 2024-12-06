@@ -3,7 +3,7 @@
     @github kuronight29
 */
 #include <bits/stdc++.h>
-#define taskname "sochan"
+#define taskname "dslop"
 #define ll long long
 #define fi first
 #define se second
@@ -11,26 +11,32 @@
 #define pb push_back
 using namespace std;
 
+void chuanhoa(string &s) {
+    stringstream ss(s);
+    string x, res;
+    while (ss >> x) {
+        if (!res.empty()) res += " ";
+        res += x;
+    }
+    s = res;
+}
+
 int simp() {
     if(fopen((string(taskname) + ".inp").c_str(), "r") != NULL) {
         freopen((string(taskname) + ".inp").c_str(), "r", stdin);
         freopen((string(taskname) + ".out").c_str(), "w", stdout);
     }
-    ll n;
-    cin >> n;
-    ll dem=0;
-    vector<ll> a(n);
-    vector<ll> b;
-    for(ll i=0; i<n; i++) {
-        cin >> a[i];
-        if(a[i]%2==0) {
-            dem++;
-            b.pb(a[i]);
-        }
+    
+    vector<string> a;
+    string s;
+    while (getline(cin, s)) {
+        chuanhoa(s);
+        a.pb(s);
     }
-    cout << dem << endl; 
-    for(ll i=0; i<b.size(); i++) {
-        cout << b[i] << " ";
+
+    for (const auto &n : a) {
+        cout << n << endl;
     }
+    
     return 0;
 }

@@ -3,7 +3,7 @@
     @github kuronight29
 */
 #include <bits/stdc++.h>
-#define taskname "sochan"
+#define taskname "tepuoc"
 #define ll long long
 #define fi first
 #define se second
@@ -12,25 +12,27 @@
 using namespace std;
 
 int simp() {
+    ios::sync_with_stdio(false);
+    cin.tie(0);
     if(fopen((string(taskname) + ".inp").c_str(), "r") != NULL) {
         freopen((string(taskname) + ".inp").c_str(), "r", stdin);
         freopen((string(taskname) + ".out").c_str(), "w", stdout);
     }
     ll n;
     cin >> n;
-    ll dem=0;
-    vector<ll> a(n);
-    vector<ll> b;
-    for(ll i=0; i<n; i++) {
-        cin >> a[i];
-        if(a[i]%2==0) {
-            dem++;
-            b.pb(a[i]);
+    vector<ll> a;
+    cout << "Cac uoc so cua " << n << endl;
+    for(ll i = 1; i * i <= n; i++) {
+        if(n % i == 0) {
+            a.push_back(i);
+            if(i != n / i) {
+                a.push_back(n / i);
+            }
         }
     }
-    cout << dem << endl; 
-    for(ll i=0; i<b.size(); i++) {
-        cout << b[i] << " ";
+    sort(a.begin(), a.end());
+    for(ll i : a) {
+        cout << i << "\n";
     }
     return 0;
 }

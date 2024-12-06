@@ -3,7 +3,7 @@
     @github kuronight29
 */
 #include <bits/stdc++.h>
-#define taskname "sochan"
+#define taskname "lop"
 #define ll long long
 #define fi first
 #define se second
@@ -16,21 +16,21 @@ int simp() {
         freopen((string(taskname) + ".inp").c_str(), "r", stdin);
         freopen((string(taskname) + ".out").c_str(), "w", stdout);
     }
-    ll n;
-    cin >> n;
-    ll dem=0;
-    vector<ll> a(n);
-    vector<ll> b;
-    for(ll i=0; i<n; i++) {
-        cin >> a[i];
-        if(a[i]%2==0) {
-            dem++;
-            b.pb(a[i]);
+    
+    vector<string> a;
+    string s;
+    while (getline(cin, s)) {
+        istringstream iss(s);
+        string res, x;
+        while (iss >> x) {
+            res = x;
         }
+        a.pb(res);
     }
-    cout << dem << endl; 
-    for(ll i=0; i<b.size(); i++) {
-        cout << b[i] << " ";
+    
+    for (const auto& n : a) {
+        cout << n << endl;
     }
+    
     return 0;
 }
