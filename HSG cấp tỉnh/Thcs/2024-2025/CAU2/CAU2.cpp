@@ -40,8 +40,8 @@ int simp() {
             }
         }
     }
-    for(char c : res) {
-        cout << c;
+    for (ll i = 0; i < res.size(); ++i) {
+        cout << res[i];
     }
     return 0;
 }
