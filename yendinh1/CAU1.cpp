@@ -26,11 +26,14 @@ int simp() {
     ll dem=0;
     cin >> x >> y;
     ll n=gcd(x,y);
-    for(ll i =1;i<=n;i++){
-        if(n%i==0){
-            dem++;
+for (ll i = 1; i * i <= n; i++) {
+        if (n % i == 0) {
+            dem++;  // Count i
+            if (i != n / i) {
+                dem++;  // Count n/i if it's different from i
+            }
         }
-    }
+    }}
     cout << dem;
     return 0;
 }
