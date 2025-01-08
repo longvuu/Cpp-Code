@@ -10,9 +10,8 @@
 #define simp main
 #define pb push_back
 using namespace std;
-const int N = 1e6 + 5;
-int n;
-int s[N]={0};
+int n,k,l=10;
+int s[11]={0};
 int simp() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);cout.tie(0);
@@ -21,14 +20,14 @@ int simp() {
         freopen((string(taskname) + ".out").c_str(), "w", stdout);
     }
     cin >> n;
-    set<int> st;
     while(n!=0){
-        st.insert(n%10);
         s[n%10]++;
-        n/=10;
+        n=n/10;
     }
-    for(auto i : st) {
-        cout << s[i] << i;
+    for(ll i =0;i<10;i++){
+        if(s[i]>0){
+            cout << s[i] <<i;
+        }
     }
     return 0;
 }
