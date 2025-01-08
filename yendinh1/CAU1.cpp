@@ -33,7 +33,7 @@ int simp() {
                 dem++;  
             }
         }
-    }}
+    }
     cout << dem;
     return 0;
 }
