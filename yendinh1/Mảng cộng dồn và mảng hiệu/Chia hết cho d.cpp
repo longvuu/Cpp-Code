@@ -21,8 +21,8 @@ int simp() {
     }
     ll dem=0;
     for(ll i =1;i<=n;i++){
-        for(ll j=i;j<=n;i++){
-            ll res=s[i]-s[j-1];
+        for(ll j=i;j<=n;j++){
+            ll res=s[j]-s[i-1];
             if(res%d==0) dem++;
         }
     }
