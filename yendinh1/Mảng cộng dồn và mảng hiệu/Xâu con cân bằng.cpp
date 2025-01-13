@@ -14,7 +14,7 @@ int simp() {
     string st;
     cin >> st;
     ll n = st.size();
-    unordered_map<int, int> s;
+    map<int, int> s;
     s[0] = 1;
     int k = 0;
     ll dem = 0;
