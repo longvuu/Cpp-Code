@@ -30,15 +30,15 @@ int simp() {
     ll dem=0;
     string st;
     cin >> st;
-    set<string> k;
     for(ll i =0;i<st.size();i++){
-        for(ll j=0;j<st.size();j++){
+        for(ll j=i+1;j<st.size();j++){
             string s=st.substr(i,j);
-            if(check(s)){
-                k.insert(s);
+            if(check(s)&&s!=""){
+                dem++;
+                cout << s<< endl;
             }
         }
     }
-    cout << k.size();
+    cout << dem;
     return 0;
 }
