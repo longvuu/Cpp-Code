@@ -14,23 +14,22 @@ int simp() {
     string st;
     cin >> st;
     st.insert(0," ");
-    int n =st.size();
-    vector<int> a(n+1,0);
-    vector<int> b(n+1,0);
-    for(ll i =1;i<=n;i++){
-        if(st[i]=='0'){
-            a[i]=a[i-1]+1;
-            b[i]=b[i-1];
-        }else if(st[i]=='1'){
-            b[i]=b[i-1]+1;
-            a[i]=a[i-1];
+    int n = st.size() - 1;
+    vector<int> a(n + 1, 0);
+    vector<int> b(n + 1, 0);
+    for(ll i = 1; i <= n; i++){
+        if(st[i] == '0'){
+            a[i] = a[i - 1] + 1;
+            b[i] = b[i - 1];
+        } else if(st[i] == '1'){
+            b[i] = b[i - 1] + 1;
+            a[i] = a[i - 1];
         }
     }
-    ll kq=0;
-    for(ll i=1;i<=n;i++){
-        for(ll j=i+1;j<=n;j++){
-            if(a[j]-a[i-1]==b[j]-b[i-1]){
-                
+    ll kq = 0;
+    for(ll i = 1; i <= n; i++){
+        for(ll j = i; j <= n; j++){
+            if(a[j] - a[i - 1] == b[j] - b[i - 1]){
                 kq++;
             }
         }
