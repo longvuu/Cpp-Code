@@ -15,16 +15,16 @@ int simp() {
     cin >> n >> d;
     vector<ll> a(n+1);
     vector<ll> s(n+1,0);
-    for(ll i =1;i<=n;i++){
+    map<ll, ll> k;
+    k[0] = 1;
+    ll dem = 0;
+    for(ll i = 1; i <= n; i++) {
         cin >> a[i];
-        s[i]=s[i-1]+a[i];
-    }
-    ll dem=0;
-    for(ll i =1;i<=n;i++){
-        for(ll j=i;j<=n;j++){
-            ll res=s[j]-s[i-1];
-            if(res%d==0) dem++;
-        }
+        s[i] = s[i-1] + a[i];
+        ll t = s[i] % d;
+        if (t < 0) t += d; 
+        dem += k[t];
+        k[t]++;
     }
     cout << dem;
     return 0;
