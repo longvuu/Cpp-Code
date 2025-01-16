@@ -1,3 +1,7 @@
+/*
+    @author longvuuuu
+    @github kuronight29
+*/
 #include <bits/stdc++.h>
 #define taskname ""
 #define ll long long
@@ -6,25 +10,25 @@
 #define simp main
 #define pb push_back
 using namespace std;
+
 int simp() {
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);cout.tie(0);
     if(fopen((string(taskname) + ".inp").c_str(), "r") != NULL) {
         freopen((string(taskname) + ".inp").c_str(), "r", stdin);
         freopen((string(taskname) + ".out").c_str(), "w", stdout);
     }
-    ll n,d;
-    cin >> n >> d;
-    vector<ll> a(n+1);
+    ll n,x,dem=0;
+    cin >> n >> x;
+    vector<ll> a(n+1);  
     vector<ll> s(n+1,0);
-    map<ll, ll> k;
-    k[0] = 1;
-    ll dem = 0;
+    map<ll, ll> mp;
     for(ll i = 1; i <= n; i++) {
         cin >> a[i];
         s[i] = s[i-1] + a[i];
-        ll t = s[i] % d;
-        if (t < 0) t += d; 
-        dem += k[t];
-        k[t]++;
+        mp[s[i]]++;
+        dem+=mp[s[i]-x];
+        if(s[i]==x&&s[i]-x!=s[i]) dem++;
     }
     cout << dem;
     return 0;
