@@ -19,34 +19,36 @@ int simp() {
     ll n, x;
     cin >> n >> x;
     vector<ll> a(n);
-    for (ll i = 0; i < n; i++) {
+    map<ll, ll> b;
+    ll dem = 1;
+    for(ll i = 0; i < n; i++) {
         cin >> a[i];
     }
     sort(a.begin(), a.end());
-    ll l = 0, r = n - 1, dem = 0;
+    for(ll i = 0; i < n; i++) {
+        if (i < n - 1 && a[i] == a[i + 1]) {
+            dem++;
+        } else {
+            b[a[i]] = dem;
+            dem = 1;
+        }
+    }
+    ll l = 0, r = n - 1, res = 0;
     while (l < r) {
         if (a[l] + a[r] == x) {
-            ll d1 = 1, d2 = 1;
-            if(a[l] != a[r]){
-                while (l + d1 < r && a[l] == a[l + d1]) {
-                    d1++;
-                }
-                while (r - d2 > l && a[r] == a[r - d2]) {
-                    d2++;
-                }
-            } else {
-                dem += (r - l + 1) * (r - l) / 2;
-                break;
+            if(a[l]!=a[r]){
+                res += b[a[l]] * b[a[r]];
+            }else{
+                res+=(r-l+1)-(r-l)/2;
             }
-            dem += d1 * d2;
-            l += d1;
-            r -= d2;
+            l += b[a[l]];
+            r -= b[a[r]];
         } else if (a[l] + a[r] > x) {
             r--;
         } else {
             l++;
         }
     }
-    cout << dem;
+    cout << res;
     return 0;
 }
