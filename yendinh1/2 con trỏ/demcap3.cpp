@@ -1,53 +1,47 @@
-/*
-    @author longvuuuu
-    @github kuronight29
-*/
-#include <bits/stdc++.h>
-#define taskname ""
-#define ll long long
-#define fi first
-#define se second
-#define simp main
-#define pb push_back
+#include<bits/stdc++.h>
 using namespace std;
 
-int simp() {
-    if(fopen((string(taskname) + ".inp").c_str(), "r") != NULL) {
-        freopen((string(taskname) + ".inp").c_str(), "r", stdin);
-        freopen((string(taskname) + ".out").c_str(), "w", stdout);
-    }
-    ll n,x;
-    cin >> n >> x;
-    vector<ll> a(n);
-    pair<ll,ll> b[n];
-    ll dem=1;
-    ll k=0;
-    for(ll i =0;i<=n;i++){
-        cin >> a[i];
-    }
-    sort(a.begin(),a.end());
-    for(ll i =0;i<=n;i++){
-        if(a[i]==a[i+1]){
-            dem++;
-        }else{
-            b[a[i]].fi =a[i];
-            k++;
-            b[a[i]].se = dem;
-            dem=1;
+long long i,j,kq,n,x;
+
+int main()
+{
+    ios_base::sync_with_stdio(0);
+    cin.tie(0); cout.tie(0);
+    cin>>n>>x;
+    long long a[n+1];
+    for (i=1;i<=n;i++)
+        cin>>a[i];
+    //nén mảng a
+    kq=0;
+    a[n+1]=a[n]+1;
+    sort(a+1,a+1+n);
+    int d=1;
+    vector<int> b,c;
+    for (int i=2;i<=n+1;i++)
+        if (a[i]==a[i-1])
+            d++;
+        else
+        {
+            b.push_back(a[i-1]);
+            c.push_back(d);
+            if (a[i-1]*2==x)
+                kq=kq+d*(d-1)/2;
+            d=1;
         }
-    }
-    ll l=0,r=k,res=0;
-        while (l < r) {
-        if (b[a[l]].fi + b[a[r]].fi == x) {
-            res+=b[a[l]].se*b[a[r]].se;
-            l+=b[a[l]].se;
-            r-=b[a[r]].se;
-        } else if ( b[a[l]].fi+ b[a[r]].fi > x) {
-            r--;
-        } else {
-            l++;
+    //tính kết quả
+    i=0; j=b.size()-1;
+    while (i<j)
+        if (b[i]+b[j]==x)
+        {
+            kq=kq+c[i]*c[j];
+            i++;
+            j--;
         }
-    }
-    cout << res;
+        else
+            if (b[i]+b[j]>x)
+                j--;
+            else
+                i++;
+    cout<<kq;
     return 0;
 }
