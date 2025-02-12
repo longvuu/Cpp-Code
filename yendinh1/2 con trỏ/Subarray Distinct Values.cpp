@@ -1,5 +1,4 @@
 /*
-    @author longvuuuu
     @github kuronight29
 */
 #include <bits/stdc++.h>
@@ -19,6 +18,27 @@ int simp() {
         freopen((string(taskname) + ".out").c_str(), "w", stdout);
     }
     
+    ll n, k;
+    cin >> n >> k;
+    vector<ll> a(n);
+    for (ll i = 0; i < n; i++) {
+        cin >> a[i];
+    }
     
+    ll l = 0, res = 0;
+    map<ll, ll> s;
+    for (ll r = 0; r < n; r++) {
+        s[a[r]]++;
+        while (s.size() > k) {
+            s[a[l]]--;
+            if (s[a[l]] == 0) {
+                s.erase(a[l]);
+            }
+            l++;
+        }
+        res += (r - l + 1);
+    }
+    
+    cout << res << endl;
     return 0;
 }
