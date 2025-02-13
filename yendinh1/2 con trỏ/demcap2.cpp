@@ -16,33 +16,30 @@ int simp() {
         freopen((string(taskname) + ".inp").c_str(), "r", stdin);
         freopen((string(taskname) + ".out").c_str(), "w", stdout);
     }
-    ll n, x;
+    ll n,x;
     cin >> n >> x;
     vector<ll> a(n);
-    map<ll, ll> b;
-    ll dem = 1;
-    for(ll i = 0; i < n; i++) {
+    pair<ll,ll> b[n];
+    ll dem=1;
+    for(ll i =0;i<=n;i++){
         cin >> a[i];
     }
-    sort(a.begin(), a.end());
-    for(ll i = 0; i < n; i++) {
-        if (i < n - 1 && a[i] == a[i + 1]) {
+    sort(a.begin(),a.end());
+    for(ll i =0;i<=n;i++){
+        if(a[i]==a[i+1]){
             dem++;
-        } else {
-            b[a[i]] = dem;
-            dem = 1;
+        }else{
+            b[a[i]].fi =a[i];
+            b[a[i]].se = dem;
+            dem=1;
         }
     }
-    ll l = 0, r = n - 1, res = 0;
-    while (l < r) {
+    ll l=0,r=n-1,res=0;
+        while (l < r) {
         if (a[l] + a[r] == x) {
-            if(a[l]!=a[r]){
-                res += b[a[l]] * b[a[r]];
-            }else{
-                res+=(r-l+1)-(r-l)/2;
-            }
-            l += b[a[l]];
-            r -= b[a[r]];
+            res+=b[a[l]].se*b[a[r]].se;
+            l+=b[a[l]].se;
+            r-=b[a[r]].se;
         } else if (a[l] + a[r] > x) {
             r--;
         } else {
