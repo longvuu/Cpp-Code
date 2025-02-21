@@ -18,22 +18,23 @@ int simp() {
         freopen((string(taskname) + ".inp").c_str(), "r", stdin);
         freopen((string(taskname) + ".out").c_str(), "w", stdout);
     }
-    ll n, dem = 0;
+    ll n;
     cin >> n;
     vector<ll> a(n);
-    vector<ll> cnt(23, 0);
-    for(ll i = 0; i < n; i++) {
-        cin >> a[i];
-    }
+    for(ll i = 0; i < n; i++) cin >> a[i];
     
-    ll i = 0;
-    for(ll j = 6; j < n; j++) {
-        while(i + 5 < j) {
-            cnt[a[i] % 23]++;
-            i++;
+    unordered_map<ll, ll> s;  
+    ll res = 0;
+    ll l = 0;
+    for(ll r = 0; r < n; r++) {
+        s[a[r]]++;
+        while(s[a[r]] > 1) {
+            s[a[l]]--;
+            if(s[a[l]] == 0) s.erase(a[l]);
+            l++;
         }
-        dem += cnt[a[j] % 23];
+        res = max(res, r - l + 1);
     }
-    cout << dem;
+    cout << res;
     return 0;
 }

@@ -18,22 +18,43 @@ int simp() {
         freopen((string(taskname) + ".inp").c_str(), "r", stdin);
         freopen((string(taskname) + ".out").c_str(), "w", stdout);
     }
-    ll n, dem = 0;
-    cin >> n;
+    
+    ll n, s;
+    cin >> n >> s;
     vector<ll> a(n);
-    vector<ll> cnt(23, 0);
+    ll t = 0;
     for(ll i = 0; i < n; i++) {
         cin >> a[i];
+        t += a[i];
     }
     
-    ll i = 0;
-    for(ll j = 6; j < n; j++) {
-        while(i + 5 < j) {
-            cnt[a[i] % 23]++;
-            i++;
-        }
-        dem += cnt[a[j] % 23];
+    if(t < s) {
+        cout << -1;
+        return 0;
     }
-    cout << dem;
+    
+    if(n == 1) {
+        cout << (a[0] >= s ? 1 : -1);
+        return 0;
+    }
+
+    vector<ll> b(2*n);
+    for(ll i = 0; i < n; i++) {
+        b[i] = b[i+n] = a[i];
+    }
+    
+    ll l = 0, r = 0, sum = 0;
+    ll ans = 2e9;
+    while(r < 2*n) {
+        sum += b[r];
+        while(sum >= s && l <= r) {
+            ans = min(ans, r-l+1);
+            sum -= b[l];
+            l++;
+        }
+        r++;
+    }
+    if(ans > n) cout << -1;
+    else cout << ans;
     return 0;
 }

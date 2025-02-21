@@ -18,22 +18,23 @@ int simp() {
         freopen((string(taskname) + ".inp").c_str(), "r", stdin);
         freopen((string(taskname) + ".out").c_str(), "w", stdout);
     }
-    ll n, dem = 0;
-    cin >> n;
-    vector<ll> a(n);
-    vector<ll> cnt(23, 0);
+    ll n, x;
+    cin >> n >> x;
+    vector<pair<ll, ll>> a(n);
     for(ll i = 0; i < n; i++) {
-        cin >> a[i];
+        cin >> a[i].fi;
+        a[i].se = i + 1;
     }
-    
-    ll i = 0;
-    for(ll j = 6; j < n; j++) {
-        while(i + 5 < j) {
-            cnt[a[i] % 23]++;
-            i++;
+    ll l = 0, r = n - 1;
+    sort(a.begin(), a.end());
+    while(l < r) {
+        if(a[l].fi + a[r].fi == x) {
+            cout << a[l].se << " " << a[r].se;
+            return 0;
         }
-        dem += cnt[a[j] % 23];
+        if(a[l].fi + a[r].fi < x) l++;
+        else r--;
     }
-    cout << dem;
+    cout << "IMPOSSIBLE";
     return 0;
 }
