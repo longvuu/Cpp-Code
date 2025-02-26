@@ -30,21 +30,23 @@ if(fopen((string(taskname) + ".inp").c_str(), "r") != NULL) {
     string s;
     cin >> s;
     ll n = s.size();
-    ll dem = 0;
-    
+    vector<ll> pHoa(n + 1, 0), pThuong(n + 1, 0), pSo(n + 1, 0);
     for(ll i = 0; i < n; i++) {
-        bool cs = false, ct = false, ch = false;
-        for(ll j = i; j < n; j++) {
-            if(hoa(s[j])) ch = true;
-            if(thuong(s[j])) ct = true;
-            if(so(s[j])) cs = true;
-            
-            if(j - i + 1 >= 6 && ch && ct && cs) {
+        pHoa[i + 1] = pHoa[i] + hoa(s[i]);
+        pThuong[i + 1] = pThuong[i] + thuong(s[i]);
+        pSo[i + 1] = pSo[i] + so(s[i]);
+    }
+    
+    ll dem = 0;
+    for(ll i = 0; i < n; i++) {
+        for(ll j = i + 5; j < n; j++) {
+            if(pHoa[j + 1] - pHoa[i] > 0 && 
+               pThuong[j + 1] - pThuong[i] > 0 && 
+               pSo[j + 1] - pSo[i] > 0) {
                 dem++;
             }
         }
     }
-    
     cout << dem;
     return 0;
 }
