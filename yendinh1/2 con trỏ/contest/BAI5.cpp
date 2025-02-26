@@ -10,7 +10,7 @@
 #define simp main
 #define pb push_back
 using namespace std;
-
+const int N = 1E8+1;
 int simp() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);cout.tie(0);
@@ -18,21 +18,27 @@ int simp() {
         freopen((string(taskname) + ".inp").c_str(), "r", stdin);
         freopen((string(taskname) + ".out").c_str(), "w", stdout);
     }
-    ll n;
-    cin >> n;
-    vector<ll> a;
-    a.pb(1);
-    ll l = 0, r = 0;
-    while(a.size()<n){
-        ll s1=2*a[l]+1;
-        ll s2=3*a[r]+1;
-        ll res=min(s1, s2);
-        if (res==s1) l++;
-        if (res==s2) r++;
-        if (a.back()!=res){
-            a.pb(res);
+    ll n,k;
+    cin >> n >> k;
+    vector<ll> a(n);
+    vector<ll> s(N,0);
+    for(ll i = 0; i < n; i++){
+        cin >> a[i];
+    }
+    bool kt=false;
+    ll l=0,r=0,res=0,x;
+    for(ll r=0;r<n;r++){
+        s[a[r]]++;
+        x=max(x,s[a[r]]);
+        while(l<=r&&x>=k){
+            res+=n-r;
+            s[a[l]]--;
+            if(s[a[l]]==x-1){
+                x--;
+            }
+            l++;
         }
     }
-    cout << a[n-1] << endl;
+    cout << res;
     return 0;
 }
