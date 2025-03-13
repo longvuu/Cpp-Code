@@ -23,25 +23,17 @@ int simp() {
     vector<ll> a;
     a.pb(4);
     a.pb(7);
-    ll l = 0, r = 0;
-    while(a.size()<n){
-        ll s1=a[l]*10+4;
-        ll s2=a[r]*10+7;
-        a.pb(s1);
-        a.pb(s2);
-        l++;
-        r++;
-    }
-    for(ll i=0;i<a.size()-1;i++){
-        if(a[i]==n){
-            cout << i ;
-            return 0;
-        }
-        if(a[i]>n){
-            cout << -1;
-            return 0;
-        }
-    }
     
+    for (ll i = 0; i < a.size(); i++) {
+        if (a[i] == n) {
+            cout << i + 1;  
+            return 0;
+        }
+        ll s1 = a[i] * 10 + 4;
+        ll s2 = a[i] * 10 + 7;
+        if (s1 <= n) a.pb(s1);
+        if (s2 <= n) a.pb(s2);
+    }
+    cout << -1;  
     return 0;
 }
