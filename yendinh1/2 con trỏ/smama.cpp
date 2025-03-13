@@ -29,6 +29,7 @@ int simp() {
             cout << i + 1;  
             return 0;
         }
+        if(a[i] > n) break;
         ll s1 = a[i] * 10 + 4;
         ll s2 = a[i] * 10 + 7;
         if (s1 <= n) a.pb(s1);
