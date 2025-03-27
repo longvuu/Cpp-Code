@@ -3,38 +3,30 @@
     @github kuronight29
 */
 #include <bits/stdc++.h>
-#define taskname "CAU3"
+#define taskname "CAU5"
 #define ll long long
 #define fi first
 #define se second
-#define simp main
 #define pb push_back
 using namespace std;
-
-int simp() {
+const int MOD = 1e9 + 7;
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);cout.tie(0);
     if(fopen((string(taskname) + ".inp").c_str(), "r") != NULL) {
         freopen((string(taskname) + ".inp").c_str(), "r", stdin);
         freopen((string(taskname) + ".out").c_str(), "w", stdout);
     }
-    ll n;
-    cin >> n;
-    n=n*n;
-    vector<ll> a(n);
-    ll s = 0;
-    for (ll i = 0; i < n; i++) {
-        cin >> a[i];
-        s += a[i];
+    
+    ll k;
+    cin >> k;
+    ll res = LLONG_MAX;
+    for(ll i = 1, p=1; i<=9; i++, p=p*10+1) {
+        for(ll j = 9, c; j>0; j--) {
+            c=p*j; 
+            if(c%k == 0) res = min(res, c/k);
+        }
     }
-    map<ll, ll> k;
-    for (ll i = 0; i < n; i++) {
-        k[a[i]] += a[i];
-    }
-    ll res = 0;
-    for (auto& i : k) {
-        res = max(res, s - i.se);
-    }
-    cout << res;
+    cout << (res % MOD) << endl;
     return 0;
 }
