@@ -15,9 +15,7 @@ int main() {
         freopen((string(taskname) + ".inp").c_str(), "r", stdin);
         freopen((string(taskname) + ".out").c_str(), "w", stdout);
     }
-
-    ll n;
-    ll k;
+    ll n,k;
     cin >> n >> k;
     vector<ll> a(n+1), s(n+1, 0);
     for(ll i =1;i<=n;i++){
