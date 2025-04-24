@@ -21,9 +21,8 @@ def solve(n):
             res += 1
     return res
 
-n = int(input("Nhập số nguyên dương n: "))
+n = int(input())
 if n <= 0:
-    print("Vui lòng nhập số nguyên dương")
+    print("Nhập số nguyên dương")
 else:
-    kq = solve(n)
-    print(f"Số lượng ước của {n} là số nguyên tố: {kq}")
+    print(solve(n))
