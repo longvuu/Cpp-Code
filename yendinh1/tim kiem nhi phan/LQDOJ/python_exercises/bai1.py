@@ -21,7 +21,6 @@ def solve(n):
             res += 1
     return res
 
-print("Chương trình đếm số lượng ước là số nguyên tố của n")
 n = int(input("Nhập số nguyên dương n: "))
 if n <= 0:
     print("Vui lòng nhập số nguyên dương")
