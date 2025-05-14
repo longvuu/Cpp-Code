@@ -1,0 +1,1 @@
+{"name":"Local: tknp03","url":"d:\\Cpp-Code\\yendinh1\\tim kiem nhi phan\\LQDOJ\\tknp03.cpp","tests":[{"id":1745283312944,"input":" 5 5\n 3 3 5 8 9\n 2 4 8 1 10","output":"1\n3\n4\n1\n6"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Cpp-Code\\yendinh1\\tim kiem nhi phan\\LQDOJ\\tknp03.cpp","group":"local","local":true}

@@ -1,6 +1,6 @@
 /*
     @author longvuuuu
-    @problem https://lqdoj.edu.vn/problem/hatenumber
+    @problem https://lqdoj.edu.vn/problem/ndivi
 */
 #include <bits/stdc++.h>
 #define taskname ""
@@ -17,25 +17,23 @@ int main() {
         freopen((string(taskname) + ".inp").c_str(), "r", stdin);
         freopen((string(taskname) + ".out").c_str(), "w", stdout);
     }
-<<<<<<< HEAD
-    
-    
-=======
-    ll d=1000;
-    ll i=1;
-    vector<ll> a;
-    while(d--){
-        a.pb(i);
-        i++;
-        while(i%3==0|| i%10==3 || i%100==3) i++;
-    }
     ll q;
     cin >> q;
     while(q--){
-        ll n;
-        cin >> n;
-        cout << a[n-1] << '\n';
+        ll n,k;
+        cin >> n >> k;
+        ll l = 0, r = 2*k+1;
+        while(l<=r){
+            ll m=(l+r)/2;
+            if(k<=1LL * (n-1) * m){
+                r=m-1;
+            } else {
+                l=m+1;
+            }
+        }
+        ll b= 1LL * n * r;
+        ll a=k-1LL * (n-1) * r;
+        cout << a+b << "\n";
     }
->>>>>>> 6911bfa87080f8d43d06cdd6238f702c8d99e166
     return 0;
 }
