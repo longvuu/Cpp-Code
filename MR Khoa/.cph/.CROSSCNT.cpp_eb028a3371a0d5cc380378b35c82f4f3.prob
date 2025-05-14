@@ -1,0 +1,1 @@
+{"name":"Local: CROSSCNT","url":"d:\\_long\\Cpp-Code\\MR Khoa\\CROSSCNT.cpp","tests":[{"id":1746923186450,"input":"5 5\n10 33 49 82 13\n19 16 25 63 52\n49 49 25 49 49\n23 63 49 86 52\n56 44 25 21 98","output":"2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\_long\\Cpp-Code\\MR Khoa\\CROSSCNT.cpp","group":"local","local":true}
