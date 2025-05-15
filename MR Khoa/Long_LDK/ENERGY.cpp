@@ -1,9 +1,8 @@
 /*
     @author longvuuuu
-    @problem https://lqdoj.edu.vn/problem/hatenumber
 */
 #include <bits/stdc++.h>
-#define taskname ""
+#define taskname "ENERGY"
 #define ll long long
 #define fi first
 #define se second
@@ -17,25 +16,13 @@ int main() {
         freopen((string(taskname) + ".inp").c_str(), "r", stdin);
         freopen((string(taskname) + ".out").c_str(), "w", stdout);
     }
-<<<<<<< HEAD
-    
-    
-=======
-    ll d=1000;
-    ll i=1;
-    vector<ll> a;
-    while(d--){
-        a.pb(i);
-        i++;
-        while(i%3==0|| i%10==3 || i%100==3) i++;
+    ll n;
+    cin >> n;
+    int dem = 0;
+    while (n > 0) {
+        if (n & 1) dem++; 
+        n >>= 1; 
     }
-    ll q;
-    cin >> q;
-    while(q--){
-        ll n;
-        cin >> n;
-        cout << a[n-1] << '\n';
-    }
->>>>>>> 6911bfa87080f8d43d06cdd6238f702c8d99e166
+    cout << dem << endl;
     return 0;
 }
