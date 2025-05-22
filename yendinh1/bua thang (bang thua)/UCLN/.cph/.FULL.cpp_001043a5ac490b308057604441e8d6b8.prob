@@ -1,0 +1,1 @@
+{"name":"Local: FULL","url":"d:\\Cpp-Code\\yendinh1\\bua thang (bang thua)\\UCLN\\FULL.cpp","tests":[{"id":1747701679405,"input":"5\n2 4 6 8 10\n3\n1 3\n2 5\n3 3","output":"2\n2\n6"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Cpp-Code\\yendinh1\\bua thang (bang thua)\\UCLN\\FULL.cpp","group":"local","local":true}
