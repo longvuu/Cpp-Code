@@ -10,7 +10,11 @@
 #define pb push_back
 using namespace std;
 int k = 31;
-
+ll gh(string s) {
+    ll h = 0;
+    for (char c : s) h = (h * k + c) % MOD;
+    return h;
+}
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);cout.tie(0);
@@ -20,31 +24,32 @@ int main() {
     }
     ll n,m;
     cin >> n >> m;
-    vector<ll> hash_a(n+1);
-    vector<ll> hash_b(m+1);
     vector<ll> pow(n+1,1);
+    vector<ll> b_hash(m);
     string a,b;
     cin >> a;
-    for(ll i =1;i<=n;i++) pow[i]=(pow[i-1]*k)%MOD;
-    for(ll i =0;i<n;i++) hash_a[i+1]=(hash_a[i]*k+a[i])%MOD;
-    for(ll i =1;i<=m;i++){
-        cin >> b;
-        for(ll j =0;j<m;j++) hash_b[j+1]=(hash_b[j]*k+b[j])%MOD;
+    ll x=n/m;
+    map<ll, vector<int>> hash_a;
+    for (int i = 0; i < m; i++) {
+        string s = a.substr(i * x, x);
+        ll h = gh(s);
+        hash_a[h].pb(i);
     }
-    for(ll i =1;i<=n;i++) cout << hash_a[i] << " ";
-    cout << endl;
-    for(ll i =1;i<=m;i++) cout << hash_b[i] << " ";
-    cout << endl;
-    vector<int> pos;
-    for(int i = 0; i <= n - m; i++) { 
-        ll hash_sub_a = (hash_a[i+m] - (hash_a[i] * pow[m]) % MOD + MOD) % MOD; 
-        if(hash_sub_a == hash_b[m]) {
-            pos.pb(i);
-        }
+    for (int i = 0; i < m; i++) {
+        string s;
+        cin >> s;
+        b_hash[i] = gh(s); 
     }
-    for(int i = 0; i < pos.size(); i++) {
-        cout << pos[i] + 1 << " ";
+    
+    vector<int> ss(m, -1);
+    for (int i = 0; i < m; i++) {
+        ll h = b_hash[i];
+        int j = hash_a[h].back();
+        hash_a[h].pop_back();
+        ss[j] = i + 1;
     }
-    cout << endl;
+    for (int i = 0; i < m; i++) cout << ss[i] << " ";
+    cout << "\n";
+
     return 0;
 }
