@@ -2,7 +2,7 @@
     @author longvuuuu
 */
 #include <bits/stdc++.h>
-#define taskname ""
+#define taskname "CAU2"
 #define ll long long
 #define fi first
 #define se second
@@ -19,35 +19,27 @@ int main() {
     cin >> a >> b;
     if (b % a != 0) {
         cout << -1;
-        return 0;
+        return;
     }
-    map<ll, ll> m, s;
-    m[b] = 1;
-    s[b] = b;
-    for (ll x = b; x >= a;x--) {
-        if (m.count(x)) {
-            for (ll y = 1; y * y <= x;y++) {
-                if (x % y == 0) {
-                    ll d1 = y, d2 = x / y;
-                    if (d1 >= a && d1 < x) {
-                        if (m[d1] < m[x] + 1 || (m[d1] == m[x] + 1 && s[d1] > s[x] + d1)) {
-                            m[d1] = m[x] + 1;
-                            s[d1] = s[x] + d1;
-                        }
-                    }
-                    if (d2 >= a && d2 < x && d1 != d2) {
-                        if (m[d2] < m[x] + 1 || (m[d2] == m[x] + 1 && s[d2] > s[x] + d2)) {
-                            m[d2] = m[x] + 1;
-                            s[d2] = s[x] + d2;
-                        }
-                    }
-                }
-            }
+    if (a == b) {
+        cout << "1 " << a;
+        return;
+    }
+    ll k = b / a;
+    ll t = a, c = 1, m = a;
+    for (ll i = 2; i * i <= k; i++) {
+        while (k % i == 0) {
+            m *= i;
+            t += m;
+            c++;
+            k /= i;
         }
     }
-
-    if (!m.count(a)) cout << -1;
-    else cout << m[a] << ' ' << s[a];
-    
+    if (k > 1) {
+        m *= k;
+        t += m;
+        c++;
+    }
+    cout << c << " " << t;
     return 0;
 }
