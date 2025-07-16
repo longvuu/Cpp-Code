@@ -2,26 +2,34 @@
     @author longvuuuu
 */
 #include <bits/stdc++.h>
-#define taskname ""
+#define taskname "btkptich"
 #define ll long long
 #define fi first
 #define se second
 #define pb push_back
 using namespace std;
+ll n;
+vector<int> a;
 
-int n;
-vector<ll> a;
-ll t;
-ll res = LLONG_MAX;
-
-void quaylui(int i, ll sum1) {
-    if (i == n) {
-        ll sum2 = t - sum1;
-         res = min(res, abs(sum1 - sum2));
-        return;
+void inkq(){
+    cout << n << " = ";
+    for(ll i =0;i<a.size();i++){
+        cout << a[i];
+        if(i<a.size()-1)  cout << "+";
     }
-    quaylui(i + 1, sum1 + weights[i]);
-    quaylui(i + 1, sum1);
+    cout << endl;
+}
+void quaylui(ll sum, int i) {
+    for (ll v = i; v <= n; v++) {
+        if (sum + v > n) break;
+        a.pb(v);
+        if (sum + v == n) {
+            inkq();
+        } else {
+            quaylui(sum + v, v);
+        }
+        a.pop_back();
+    }
 }
 
 int main() {
@@ -31,16 +39,7 @@ int main() {
         freopen((string(taskname) + ".inp").c_str(), "r", stdin);
         freopen((string(taskname) + ".out").c_str(), "w", stdout);
     }
-
     cin >> n;
-    a.resize(n);
-    t = 0;
-
-    for (int i = 0; i < n; i++) {
-        cin >> a[i];
-        t += t[i];
-    }
-    quaylui(0, 0);
-    cout << res << endl;
+    quaylui(0, 1);
     return 0;
 }
