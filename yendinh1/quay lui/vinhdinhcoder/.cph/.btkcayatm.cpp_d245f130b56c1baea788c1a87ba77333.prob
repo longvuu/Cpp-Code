@@ -1,0 +1,1 @@
+{"name":"Local: btkcayatm","url":"d:\\_long\\Cpp-Code\\yendinh1\\quay lui\\vinhdinhcoder\\btkcayatm.cpp","tests":[{"id":1752673288308,"input":"5 12000\n1000 2000 3000 4000 5000\n","output":"4\n1 2 4 5"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\_long\\Cpp-Code\\yendinh1\\quay lui\\vinhdinhcoder\\btkcayatm.cpp","group":"local","local":true}

@@ -1,0 +1,1 @@
+{"name":"Local: btkcow2","url":"d:\\_long\\Cpp-Code\\yendinh1\\quay lui\\vinhdinhcoder\\btkcow2.cpp","tests":[{"id":1752848424333,"input":"5\n2 1 2 1 2\n","output":"12122\n11212\n21112\n12221\n22121\n21211\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\_long\\Cpp-Code\\yendinh1\\quay lui\\vinhdinhcoder\\btkcow2.cpp","group":"local","local":true}

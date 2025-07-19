@@ -1,0 +1,1 @@
+{"name":"Local: btkdaos","url":"d:\\_long\\Cpp-Code\\yendinh1\\quay lui\\vinhdinhcoder\\btkdaos.cpp","tests":[{"id":1752847913272,"input":"abc\n","output":"6\nabc\nacb\nbac\nbca\ncab\ncba\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\_long\\Cpp-Code\\yendinh1\\quay lui\\vinhdinhcoder\\btkdaos.cpp","group":"local","local":true}

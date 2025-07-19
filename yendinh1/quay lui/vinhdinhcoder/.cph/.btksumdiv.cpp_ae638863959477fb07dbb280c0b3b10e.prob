@@ -1,0 +1,1 @@
+{"name":"Local: btksumdiv","url":"d:\\_long\\Cpp-Code\\yendinh1\\quay lui\\vinhdinhcoder\\btksumdiv.cpp","tests":[{"id":1752926689488,"input":"5 7\n2 5 3 6 4\n","output":"4\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\_long\\Cpp-Code\\yendinh1\\quay lui\\vinhdinhcoder\\btksumdiv.cpp","group":"local","local":true}
