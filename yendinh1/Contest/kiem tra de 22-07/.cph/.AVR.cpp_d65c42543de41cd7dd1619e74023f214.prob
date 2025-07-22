@@ -1,0 +1,1 @@
+{"name":"Local: AVR","url":"d:\\_long\\Cpp-Code\\yendinh1\\Contest\\kiem tra de 22-07\\AVR.cpp","tests":[{"id":1753144502868,"input":"5\n1 2 2 3 4","output":"1 3 2 6 8"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\_long\\Cpp-Code\\yendinh1\\Contest\\kiem tra de 22-07\\AVR.cpp","group":"local","local":true}
