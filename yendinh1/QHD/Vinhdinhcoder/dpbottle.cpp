@@ -1,4 +1,4 @@
-/*
+ /*
     @github longvuu
 */
 #include <bits/stdc++.h>
@@ -15,7 +15,15 @@ int simp() {
         freopen((string(taskname) + ".inp").c_str(), "r", stdin);
         freopen((string(taskname) + ".out").c_str(), "w", stdout);
     }
-    
-    
+    ll n;
+    cin >> n;
+    vector<ll> a(n+1),f(n+1);
+    for(ll i =1;i<=n;i++) cin >> a[i];
+    f[0]=0;
+    f[1]=a[1];
+    f[2]=a[1]+a[2];
+    for(ll i =3;i<=n;i++)
+        f[i]=max(f[i-1],max(a[i]+f[i-2],a[i]+a[i-1]+f[i-3]));
+    cout << f[n];
     return 0;
 }
