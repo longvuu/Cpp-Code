@@ -2,7 +2,7 @@
     @github longvuu
 */
 #include <bits/stdc++.h>
-#define taskname "dpbottle"
+#define taskname "dpsmax"
 #define ll long long
 #define fi first
 #define se second
@@ -17,13 +17,18 @@ int simp() {
     }
     ll n;
     cin >> n;
-    vector<ll> a(n+1),f(n+1);
+    ll res=0,t=0;
+    vector<ll> a(n+1),dp(n+1,1);
     for(ll i =1;i<=n;i++) cin >> a[i];
-    f[0]=0;
-    f[1]=a[1];
-    f[2]=a[1]+a[2];
-    for(ll i =3;i<=n;i++)
-        f[i]=max(f[i-1],max(a[i]+f[i-2],a[i]+a[i-1]+f[i-3]));
-    cout << f[n];
+    for (ll i = 1; i <= n; i++) {
+        dp[i] = a[i];
+        for (ll j = 1; j < i; j++) {
+            if (a[j] <= a[i]) {
+                dp[i] = max(dp[i], dp[j] + a[i]);
+            }
+        }
+        res = max(res, dp[i]);
+    }
+    cout << res;
     return 0;
 }
