@@ -19,11 +19,24 @@ int simp() {
     cin >> n;
     vector<ll> a(n+1),f(n+1);
     for(ll i =1;i<=n;i++) cin >> a[i];
-    f[0]=0;
-    f[1]=a[1];
-    f[2]=a[1]+a[2];
-    for(ll i =3;i<=n;i++)
-        f[i]=max(f[i-1],max(a[i]+f[i-2],a[i]+a[i-1]+f[i-3]));
+    
+    if(n == 1) {
+        cout << a[1];
+        return 0;
+    }
+    if(n == 2) {
+        cout << max(a[1], a[2]);
+        return 0;
+    }
+    
+    f[0] = 0;
+    f[1] = a[1];
+    f[2] = max(a[1], a[2]);
+    
+    for(ll i = 3; i <= n; i++) {
+        f[i] = max(f[i-1], a[i] + f[i-2]);
+    }
+    
     cout << f[n];
     return 0;
 }
