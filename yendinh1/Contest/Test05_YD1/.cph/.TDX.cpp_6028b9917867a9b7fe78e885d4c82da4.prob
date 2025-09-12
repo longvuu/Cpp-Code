@@ -1,0 +1,1 @@
+{"name":"Local: TDX","url":"d:\\_long\\Cpp-Code\\yendinh1\\Contest\\Test05_YD1\\TDX.cpp","tests":[{"id":1757499955540,"input":"3\n2\naabb\ncc\n2\nab\nab\n2\nab\na ","output":"YES\nYES\nNO"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\_long\\Cpp-Code\\yendinh1\\Contest\\Test05_YD1\\TDX.cpp","group":"local","local":true}
