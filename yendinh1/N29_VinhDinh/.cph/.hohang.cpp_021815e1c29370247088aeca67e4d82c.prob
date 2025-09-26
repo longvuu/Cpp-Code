@@ -1,0 +1,1 @@
+{"name":"Local: hohang","url":"d:\\_long\\Cpp-Code\\yendinh1\\N29_VinhDinh\\hohang.cpp","tests":[{"id":1758286865074,"input":"3\n3\nLLQ\nKHQ\n3\nFDF\nGDD\n3\nKWE\nEKW\n","output":"0\n0\n1\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\_long\\Cpp-Code\\yendinh1\\N29_VinhDinh\\hohang.cpp","group":"local","local":true}

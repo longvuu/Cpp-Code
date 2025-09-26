@@ -1,0 +1,1 @@
+{"name":"Local: duangua","url":"d:\\_long\\Cpp-Code\\yendinh1\\N29_VinhDinh\\duangua.cpp","tests":[{"id":1758033499520,"input":"5 11\n41 14 29 13 93 12 24 11 86 20 72\n","output":"12082\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\_long\\Cpp-Code\\yendinh1\\N29_VinhDinh\\duangua.cpp","group":"local","local":true}

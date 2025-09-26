@@ -1,0 +1,1 @@
+{"name":"Local: quatangtt","url":"d:\\_long\\Cpp-Code\\yendinh1\\N29_VinhDinh\\quatangtt.cpp","tests":[{"id":1757946841449,"input":"8 8\n6 3 8 10 6 1 9 4\n","output":"7"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\_long\\Cpp-Code\\yendinh1\\N29_VinhDinh\\quatangtt.cpp","group":"local","local":true}
