@@ -1,0 +1,1 @@
+{"name":"Local: NUMMAX","url":"d:\\_long\\Cpp-Code\\yendinh1\\Contest\\test10_YD1\\NUMMAX.cpp","tests":[{"id":1759754946680,"input":"123456781234\n567812345678","output":"56781234"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\_long\\Cpp-Code\\yendinh1\\Contest\\test10_YD1\\NUMMAX.cpp","group":"local","local":true}
