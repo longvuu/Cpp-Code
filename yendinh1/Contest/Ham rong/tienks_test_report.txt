@@ -1,0 +1,22 @@
+TIENKS test harness report
+root: d:\_long\Cpp-Code\yendinh1\Contest\Ham rong
+seed: 12345
+compiled summary:
+d:\_long\Cpp-Code\yendinh1\Contest\Ham rong\YD1_DAT\tienks.cpp -> OK
+d:\_long\Cpp-Code\yendinh1\Contest\Ham rong\YD1_DONG\TIENKS.cpp -> OK
+d:\_long\Cpp-Code\yendinh1\Contest\Ham rong\YD1_Long\TIENKS.cpp -> OK
+d:\_long\Cpp-Code\yendinh1\Contest\Ham rong\YD1_MANH\TIENKS.cpp -> OK
+d:\_long\Cpp-Code\yendinh1\Contest\Ham rong\YD1_MINH\TIENKS.cpp -> OK
+d:\_long\Cpp-Code\yendinh1\Contest\Ham rong\YD1_VU\TIENKS.cpp -> OK
+
+Running 21 tests...
+
+Summary:
+d:\_long\Cpp-Code\yendinh1\Contest\Ham rong\YD1_DAT\tienks.cpp : passed 21/21  skipped 0
+d:\_long\Cpp-Code\yendinh1\Contest\Ham rong\YD1_DONG\TIENKS.cpp : passed 21/21  skipped 0
+d:\_long\Cpp-Code\yendinh1\Contest\Ham rong\YD1_Long\TIENKS.cpp : passed 21/21  skipped 0
+d:\_long\Cpp-Code\yendinh1\Contest\Ham rong\YD1_MANH\TIENKS.cpp : passed 21/21  skipped 0
+d:\_long\Cpp-Code\yendinh1\Contest\Ham rong\YD1_MINH\TIENKS.cpp : passed 21/21  skipped 0
+d:\_long\Cpp-Code\yendinh1\Contest\Ham rong\YD1_VU\TIENKS.cpp : passed 21/21  skipped 0
+
+All compiled executables matched the reference on generated tests.

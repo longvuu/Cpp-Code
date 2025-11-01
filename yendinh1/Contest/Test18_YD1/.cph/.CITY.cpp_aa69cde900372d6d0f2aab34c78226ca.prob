@@ -1,0 +1,1 @@
+{"name":"Local: CITY","url":"d:\\_long\\Cpp-Code\\yendinh1\\Contest\\Test18_YD1\\CITY.cpp","tests":[{"id":1762005058331,"input":"5\n1\n2\n3\n4\n5","output":"4"},{"id":1762005253261,"input":"3\n10\n10\n10","output":"3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\_long\\Cpp-Code\\yendinh1\\Contest\\Test18_YD1\\CITY.cpp","group":"local","local":true}

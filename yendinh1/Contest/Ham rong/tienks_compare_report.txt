@@ -1,0 +1,21 @@
+Found 6 file(s):
+ - d:\_long\Cpp-Code\yendinh1\Contest\Ham rong\YD1_DAT\tienks.cpp
+ - d:\_long\Cpp-Code\yendinh1\Contest\Ham rong\YD1_DONG\TIENKS.cpp
+ - d:\_long\Cpp-Code\yendinh1\Contest\Ham rong\YD1_Long\TIENKS.cpp
+ - d:\_long\Cpp-Code\yendinh1\Contest\Ham rong\YD1_MANH\TIENKS.cpp
+ - d:\_long\Cpp-Code\yendinh1\Contest\Ham rong\YD1_MINH\TIENKS.cpp
+ - d:\_long\Cpp-Code\yendinh1\Contest\Ham rong\YD1_VU\TIENKS.cpp
+
+Pairwise similarity matrix (0..1, 1=identical normalized):
+
+	tienks.cpp	TIENKS.cpp	TIENKS.cpp	TIENKS.cpp	TIENKS.cpp	TIENKS.cpp
+tienks.cpp	1.000	0.154	0.178	0.150	0.145	0.253
+TIENKS.cpp	0.154	1.000	0.138	0.281	0.381	0.468
+TIENKS.cpp	0.178	0.138	1.000	0.067	0.069	0.079
+TIENKS.cpp	0.150	0.281	0.067	1.000	0.317	0.433
+TIENKS.cpp	0.145	0.381	0.069	0.317	1.000	0.426
+TIENKS.cpp	0.253	0.468	0.079	0.433	0.426	1.000
+
+Detailed diffs for pairs with differences (if any):
+
+No diffs above threshold (all normalized files are similar).
