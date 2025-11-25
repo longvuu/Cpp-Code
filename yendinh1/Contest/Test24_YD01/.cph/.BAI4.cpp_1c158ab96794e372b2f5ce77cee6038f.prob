@@ -1,0 +1,1 @@
+{"name":"Local: BAI4","url":"d:\\_long\\Cpp-Code\\yendinh1\\Contest\\Test24_YD01\\BAI4.cpp","tests":[{"id":1763890289882,"input":"3\n1 0\n5\n4 2\n1 2 3 4\n6 0\n1 1 9 1 1 1","output":"1 0\n2 5\n5 2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\_long\\Cpp-Code\\yendinh1\\Contest\\Test24_YD01\\BAI4.cpp","group":"local","local":true}

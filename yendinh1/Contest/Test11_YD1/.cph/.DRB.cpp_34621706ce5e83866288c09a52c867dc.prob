@@ -1,0 +1,1 @@
+{"name":"Local: DRB","url":"d:\\_long\\Cpp-Code\\yendinh1\\Contest\\Test11_YD1\\DRB.cpp","tests":[{"id":1763386516964,"input":"2\n5\n7\n3\n","output":"2"},{"id":1763386518531,"input":"2\n3\n7\n5\n","output":"-1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\_long\\Cpp-Code\\yendinh1\\Contest\\Test11_YD1\\DRB.cpp","group":"local","local":true}
